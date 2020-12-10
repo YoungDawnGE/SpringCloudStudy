@@ -1,6 +1,8 @@
 server:
   port: 7001
 
+
+#Eureka server
 eureka:
   instance:
     hostname: localhost #eureka服务端的实例名称
