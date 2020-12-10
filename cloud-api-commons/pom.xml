@@ -12,6 +12,7 @@
     <artifactId>cloud-api-commons</artifactId>
 
     <!--通用工程 提出公用的工具包👇-->
+    <!--提取了4个-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
