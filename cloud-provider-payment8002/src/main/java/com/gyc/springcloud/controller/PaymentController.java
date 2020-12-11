@@ -21,7 +21,6 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
-//    @Value()可以读取到yaml中的配置
     @Value("${server.port}")
     private String serverPort;
 

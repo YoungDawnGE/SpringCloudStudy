@@ -24,8 +24,8 @@ public class OrderController {
     //或者@Resource
     @Autowired
     private RestTemplate restTemplate;
-    public static final String PAYMENT_URL = "http://localhost:8001";
-
+//    public static final String PAYMENT_URL = "http://localhost:8001";//单机版
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";//用微服务的名字作为地址
 
     //虽然表面上是get请求，但是内部是post请求
     @GetMapping("/consumer/payment/create")
