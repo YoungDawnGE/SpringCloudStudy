@@ -12,13 +12,13 @@ import org.springframework.web.client.RestTemplate;
  */
 @RestController
 @Slf4j
-public class OrderZKController {
+public class OrderConsulController {
     @Autowired
     private RestTemplate restTemplate;
     public static final String PAYMENT_URL = "http://cloud-payment-service";//用微服务的名字作为地址
 
-    @GetMapping("/consumer/payment/zk")
-    public String zkInfo() {
-        return restTemplate.getForObject(PAYMENT_URL + "/payment/zk", String.class);
+    @GetMapping("/consumer/payment/consul")
+    public String consulInfo() {
+        return restTemplate.getForObject(PAYMENT_URL + "/payment/consul", String.class);
     }
 }

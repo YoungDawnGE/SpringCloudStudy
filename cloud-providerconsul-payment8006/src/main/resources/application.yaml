@@ -1,0 +1,15 @@
+server:
+  port: 8006
+
+spring:
+  application:
+    name: cloud-payment-service
+
+  # consul注册中心的配置
+  cloud:
+    consul:
+      host: 192.168.253.128
+      port: 8500
+      discovery:
+        #暴露服务名称
+        service-name: ${spring.application.name}
