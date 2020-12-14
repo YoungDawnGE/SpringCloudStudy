@@ -6,3 +6,6 @@
     <artifactId>spring-cloud-starter-consul-discovery</artifactId>
 </dependency>
 ```
+涉及模块
+- cloud-providerconsul-payment8006
+- cloud-consumerconsul-order80
