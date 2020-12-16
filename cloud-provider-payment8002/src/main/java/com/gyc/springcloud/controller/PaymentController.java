@@ -4,8 +4,10 @@ import com.gyc.springcloud.entity.CommonResult;
 import com.gyc.springcloud.entity.Payment;
 import com.gyc.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -50,5 +52,10 @@ public class PaymentController {
             return new CommonResult<>(200, "查询成功,server port:"+serverPort, result);
         }
         return new CommonResult<>(444, "无查询结果,server port:"+serverPort);
+    }
+
+    @GetMapping("lb")
+    public String getPaymentLB() {
+        return serverPort;
     }
 }
