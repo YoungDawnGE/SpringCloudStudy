@@ -11,6 +11,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by GYC
@@ -47,6 +48,13 @@ public class PaymentController {
             return new CommonResult<>(200, "查询成功,server port:" + serverPort, result);
         }
         return new CommonResult<>(444, "无查询结果,server port:" + serverPort);
+    }
+
+    //openfeign演示consumer调用接口超时的情况
+    @GetMapping("/feign/timeout")
+    public String paymentFeignTimeout() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(3);
+        return serverPort;
     }
 
     @GetMapping("/list")

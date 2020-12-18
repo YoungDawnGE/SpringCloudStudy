@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: cloud-payment-service
+    name: cloud-payment-com.gyc.springcloud.service
 
   # consul注册中心的配置
   cloud:
