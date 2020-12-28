@@ -1,0 +1,26 @@
+server:
+  port: 80
+
+
+#Eureka client
+eureka:
+  client:
+    #表示是否将自己注册进EurekaServer，默认为true。我们这就不注册进去了，是个客户端
+    register-with-eureka: false
+    #去哪里注册
+    service-url:
+      #      defaultZone: http://localhost:7001/eureka #单机版
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka #集群版
+
+#OpenFeign底层用Ribbon来进行超时控制
+#设置feign客户端的超时时间(OpenFeign默认支持Ribbon)
+ribbon:
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间ms
+  ConnectTimeout: 5000
+  #指的是建立连接后从服务器读到可用资源所用的时间
+  ReadTimeout: 5000
+#
+#客户端开启Feign中的hystrix
+feign:
+  hystrix:
+    enabled: true
