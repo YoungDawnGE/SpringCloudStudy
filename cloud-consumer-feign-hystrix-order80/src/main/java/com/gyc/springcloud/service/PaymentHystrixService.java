@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * 把cloud-provider-hystrix-payment8001中controller能提供的方法拿过来
  */
 @Component
-@FeignClient("CLOUD-PROVIDER-HYSTRIX-PAYMENT-SERVICE")
+@FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT-SERVICE", fallback = PaymentFallbackService.class)
 public interface PaymentHystrixService {
     @GetMapping("payment/hystrix/ok/{id}")
     String paymentInfoOK(@PathVariable("id") Integer id);
