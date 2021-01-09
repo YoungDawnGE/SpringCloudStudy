@@ -24,6 +24,7 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
+    //===================服务降级===================
     @GetMapping("hystrix/ok/{id}")
     public String paymentInfoOK(@PathVariable("id") Integer id) {
         String res = paymentService.paymentInfoOK(id);
@@ -34,6 +35,14 @@ public class PaymentController {
     @GetMapping("hystrix/timeout/{id}")
     public String paymentInfoTimeout(@PathVariable("id") Integer id) throws InterruptedException {
         String res = paymentService.paymentInfoTimeOut(id);
+        log.info("******* result:" + res + "*******");
+        return res;
+    }
+
+    //===================服务熔断===================
+    @GetMapping("hystrix/circuit/{id}")
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id) {
+        String res = paymentService.paymentCircuitBreaker(id);
         log.info("******* result:" + res + "*******");
         return res;
     }
