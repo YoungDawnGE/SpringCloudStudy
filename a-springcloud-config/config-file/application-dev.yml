@@ -1,2 +1,5 @@
 server:
   port: 3366 # 修改后的配置文件
+
+config:
+  info : gyc config info
