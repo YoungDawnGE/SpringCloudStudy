@@ -12,6 +12,13 @@ spring:
       profile: dev #读取后缀名称
       uri: http://config-center.com:3344 #config center   config服务端的地址
 
+  #RabbitMQ配置 5672是mq连接端口 15672是web界面的端口
+  rabbitmq:
+    host: 192.168.253.128
+    port: 5672
+    username: guest #不能用gyc登录，会连接错误
+    password: guest
+
 # 服务注册到eureka的地址
 eureka:
   client:

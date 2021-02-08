@@ -1,0 +1,1 @@
+config与bus的结合
