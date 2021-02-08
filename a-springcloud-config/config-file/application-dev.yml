@@ -2,4 +2,4 @@
 #  port: 3355 # 修改后的配置文件
 
 config:
-  info : gyc config info version=2
+  info : gyc config info version=3
